@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lakshmi Narayana Kanamarlapudi</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  </head>
+
+
+  <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container flex-lg-column">
+        <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
+          <span class="fw-bold h3 d-block d-lg-none">Lakshmi Narayana Kanamarlapudi</span>
+        
+          <img
+            src="./assets/images/profilepic1.jpg"
+            class="d-none d-lg-block rounded-circle profilepic"
+          />
+        </a>
+        <div id="digit-clock"></div>
+            <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+            <script src="https://waph-uc.github.io/clock.js"></script>
+            <script>
+              function displayTime() {
+                document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+              }
+              setInterval(displayTime, 500);
+              var canvas = document.getElementById("analog-clock");
+              var ctx = canvas.getContext("2d");
+              var radius = canvas.height / 2;
+              ctx.translate(radius,radius);
+              radius = radius *0.90
+              setInterval(drawClock,1000);
+          
+              function drawClock() {
+                  drawFace(ctx,radius);
+                  drawNumbers(ctx,radius);
+                  drawTime(ctx,radius); 
+                    }
+            </script>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#services"
+                >Experience</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#work"
+                >Work</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#about"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#blog"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#reviews"
+                >Details</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAV BAR -->
+    <script>
+      // Function to set a cookie
+      function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+      }
+  
+      // Function to get the value of a cookie by name
+      function getCookie(name) {
+        const keyValue = document.cookie.match(`(^|;) ?${name}=([^;]*)(;|$)`);
+        return keyValue ? keyValue[2] : null;
+      }
+  
+      // Function to display a welcome message based on cookie
+      function displayWelcomeMessage() {
+        const lastVisit = getCookie('lastVisit');
+  
+        if (!lastVisit) {
+          // First-time visit
+          const currentDate = new Date().toLocaleString();
+          alert('Welcome to my homepage!');
+          setCookie('lastVisit', currentDate, 365); // Set cookie to expire in 365 days
+        } else {
+          // Returning visit
+          alert(`Welcome back! Your last visit was ${lastVisit}`);
+        }
+      }
+  
+      // Call the function on page load
+      window.onload = displayWelcomeMessage;
+    </script>
+    <!-- CONTENT WRAPPER -->
+    <div id="content-wrapper">
+      <!-- HOME SECTION -->
+      <section id="home" class="full-hight px-lg-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10">
+              <h1 class="text-uppercase display-4 fw-bold" data-aos="fade-up" style="font-size: 2rem;">
+                I'm Lakshmi Narayana Kanamarlapudi, a skilled
+                <span class="text-brand">Aspiring Data Scientist</span>
+              </h1>
+              <p
+                class="lead mt-2 mb-3 fs-3"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                style="font-size: 1.0rem !important;"
+              >
+              I am a dedicated Master's student in Information Technology, specializing in data science. With a keen interest in extracting meaningful patterns from data, I aspire to contribute innovative solutions in the ever-evolving field of technology.
+              </p>
+
+              <div id="email" onclick="showhideEmail()">Show my email</div>
+		                  <script src="email.js"></script>
+              <div data-aos="fade-up" data-aos-delay="600">
+                <a href="#work" class="btn btn-brand fw-bold me-4">
+                  EXPLORE MY WORK</a
+                >
+                <a href="" class="custom-link num me-2"> Call: +91 1234567891</a>
+
+                <a href="https://drive.google.com/file/d/1cMRBWJ0IGihMPqOe55ryG1pWwpVzG-Bt/view?usp=drive_link" class="custom-link num">View Resume</a>
+
+                <a href="waph.html" class="custom-link num">Index</a>
+                <h3>Random Cat Images</h3>
+                    <button id="get-cat-btn">Get Random Cat</button>
+                    <div id="cat-image-container"></div>
+
+                    <!-- Include Axios for making HTTP requests -->
+                    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                    <script>
+                      // Function to fetch a random cat image from the Cat API
+                      function fetchRandomCatImage() {
+                        const url = 'https://api.thecatapi.com/v1/images/search';
+
+                        axios.get(url)
+                          .then(function(response) {
+                            const catImageUrl = response.data[0].url;
+                            displayCatImage(catImageUrl);
+                          })
+                          .catch(function(error) {
+                            console.error('Error fetching random cat image:', error);
+                          });
+                      }
+
+                      // Function to display the cat image on the webpage
+                      function displayCatImage(catImageUrl) {
+                        const catImageContainer = document.getElementById('cat-image-container');
+                        catImageContainer.innerHTML = ''; // Clear previous cat images
+                        
+                        const catImageElement = document.createElement('img');
+                        catImageElement.src = catImageUrl;
+                        catImageElement.alt = 'Cat';
+
+                        // Set width and height attributes to reduce the size of the image
+                        catImageElement.width = 50; // Set your desired width
+                        catImageElement.height = 300; // Set your desired height
+
+                        catImageContainer.appendChild(catImageElement);
+                      }
+
+                      // Event listener for the "Get Random Cat" button
+                      document.getElementById('get-cat-btn').addEventListener('click', fetchRandomCatImage);
+                    </script>
+
+                
+
+                <div id="api-response-container" style="color: #edf6ef;"></div>
+                  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                  <script>
+                    $(document).ready(function() {
+                      $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+                        function(result) {
+                          console.log("From jokeAPI: " + JSON.stringify(result));
+                          $("#api-response-container").html("A programming joke of the day: " + result.joke);
+                        }
+                      );
+                    });
+                  </script>
+                  <div id="weather-container" style="color: #a6d810; margin-top: 20px;">
+                    <!-- Weather information will be displayed here -->
+                  </div>
+                  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                  <script>
+                    $(document).ready(function() {
+                      // Weatherbit API key (replace with your own key)
+                      var apiKey = '71d549aef81a45b3a0b29f0c72d58ca2';
+        
+                      // Specify the city and country for weather information
+                      var city = 'Newyork';
+                      var country = 'United states';
+        
+                      // Make a request to Weatherbit API
+                      $.get("https://api.weatherbit.io/v2.0/current?key=" + apiKey + "&city=" + city + "&country=" + country,
+                        function(result) {
+                          console.log("Weather API response: " + JSON.stringify(result));
+        
+                          // Display weather information
+                          var weatherInfo = "Current temperature in " + city + ": " + result.data[0].temp + "°C";
+                          $("#weather-container").html(weatherInfo);
+                        }
+                      );
+                    });
+                  </script>
+
+                  <a href="https://info.flagcounter.com/f614"><img src="https://s11.flagcounter.com/count2/f614/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //HOME SECTION -->
+
+      <!-- EXPERIENCE -->
+      <section id="services" class="full-hight px-lg-5">
+        <div class="container">
+          <div class="row p-4">
+            <div class="col-md-8" data-aos="fade-up">
+              <h6>EXPERIENCE</h6>
+              <h1>Experience I have</h1>
+            </div>
+          </div>
+
+          <div class="row gy-4">
+            <div class="col-md-4" data-aos="fade-up">
+              <div class="bg-base p-4 rounded-4 shadow-effect">
+                <div class="iconbox">
+                  <i class="las la-feather"></i>
+                </div>
+                <h5 class="mt-3 mb-4">Application Development Associate</h5>
+                <p style="text-align: justify;">
+                  As an Application Development Associate at Accenture Solution India, I significantly contributed to enhancing database retrieval efficiency by 
+                  developing SQL scripts during a team project. This initiative resulted in an impressive 85% increase in productivity compared to previous levels. 
+                  Additionally, my role involved effective communication with clients and cross-functional teams to align project priorities, translating intricate 
+                  business processes into clear and comprehensive test scenarios within defined timelines. I played a pivotal role in creating detailed test logs and 
+                  reports while collaborating closely with the development team to address and resolve defects promptly. Moreover, I took on the responsibility of 
+                  providing training to new team members, ensuring the consistent delivery of high-quality work.
+                </p>
+                <a href="#" class="custom-link">See more</a>
+              </div>
+            </div>
+
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="bg-base p-4 rounded-4 shadow-effect">
+                <div class="iconbox">
+                  <i class="las la-pencil-ruler"></i>
+                </div>
+                <h5 class="mt-3 mb-4">Junior Web Developer Intern</h5>
+                <p style="text-align: justify;">
+                  During my tenure as a Junior Web Developer Intern, I played a pivotal role in advancing our project through 70% of the development phase, 
+                  ultimately achieving a remarkable 92% success rate. Notably, I led the creation of a comprehensive Learning Management System, a full-stack 
+                  web application featuring robust user authentication. Additionally, I enhanced user experience by developing diverse web pages, optimizing 
+                  the website for greater flexibility and usability. These experiences have strengthened my skills in web development and project management, 
+                  contributing to the success of our collaborative efforts.
+                </p>
+                <a href="#" class="custom-link">See more</a>
+              </div>
+            </div>
+
+            <div id="app">
+              <h1>{{ message }}</h1>
+              <button @click="increment">Increment</button>
+              <p>Count: {{ count }}</p>
+            </div>
+            <script>
+              new Vue({
+                el: '#app',
+                data: {
+                  message: 'Simple Counter App',
+                  count: 0
+                },
+                methods: {
+                  increment() {
+                    this.count++;
+                  }
+                }
+              });
+            </script>
+
+          </div>
+        </div>
+      </section>
+      <!-- //EXPERIENCE -->
+
+      <!-- WORK -->
+      <section id="work" class="full-hight px-lg-5">
+        <div class="container gy-4">
+          <div class="row p-4">
+            <div class="col-md-8" data-aos="fade-up">
+              <h2>WORK</h2>
+              <h3>My Recent Projects</h3>
+            </div>
+          </div>
+
+          <div class="row gy-4">
+            <div class="col-md-6 rounded-4" data-aos="fade-up">
+              <div class="card rounded-4 bg-base shadow-effect">
+  
+                <div class="card-content p-3">
+                  <h4>Predictive Energy Consumption for Sustainable Buildings</h4>
+                  <p class="text-white">
+                    I have played a pivotal role in implementing data-driven sustainability initiatives, where I collected and preprocessed time-series 
+                    data while integrating various sensors within smart buildings. Through my efforts, I successfully developed and deployed advanced 
+                    forecasting models. The impact of these forecasting models and optimization strategies is evident, as they have significantly increased 
+                    project accuracy, reaching an impressive 95%. This achievement is poised to yield superior results for our initiatives.
+                  </p>
+                  <a href="#" class="custom-link">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 rounded-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="card rounded-4 bg-base shadow-effect">
+                <div class="card-content p-3">
+                  <h4>Air Quality Index Prediction using Machine Learning</h4>
+                  <p class="text-white">
+                    In the course of my project, I applied time-series analysis techniques to effectively capture temporal patterns, thereby significantly 
+                    improving the accuracy of the model in predicting air quality fluctuations over time. Additionally, I developed a user-friendly web application 
+                    aimed at delivering real-time Air Quality Index (AQI) information. This hands-on experience has notably advanced my understanding of machine learning 
+                    concepts and techniques, contributing to a substantial 90% increase in my knowledge in this domain.
+                  </p>
+                  <a href="#" class="custom-link">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+        </div>
+      </section>
+      <!-- //WORK -->
+
+      <!-- ABOUT -->
+      <section id="about" class="full-hight px-lg-5">
+        <div class="container gy-4">
+          <div class="row p-4">
+            <div class="col-md-8" data-aos="fade-up">
+              <h6>ABOUT</h6>
+              <h1>Education</h1>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="300">
+              <div class="bg-base p-4 rounded-4 shadow-effect">
+                <h5 class="mt-3 mb-4">Master of Science: Information Technology</h5>
+                <h6 class="text-brand">
+                  University of Cincinnati, Cincinnati, Ohio (Anticipated Graduation: 2024)
+                </h6>
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-12" data-aos="fade-up" data-aos-delay="600">
+              <div class="bg-base p-4 rounded-4 shadow-effect">
+                <h5 class="mt-3 mb-4">Bachelor of Technology: Computer Science and Engineering</h5>
+                <h6 class="text-brand">
+                  Veltech University, Chennai, India  (Jun 2018 - Jul 2022)
+                </h6>
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </section>
+      <!-- //ABOUT -->
+
+      <!-- SKILLS -->
+      <section id="blog" class="full-hight px-lg-5">
+        <div class="container gy-4">
+          <div class="row p-4">
+            <div class="col-md-8" data-aos="fade-up">
+              <h3>SKILLS</h3>
+              
+            </div>
+
+            <div class="row gy-4">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="">
+                <div class="card rounded-4 bg-base shadow-effect gy-4">
+                  
+                  <div class="card-content p-3">
+                    <p class="text-brand mb-2">Programming Languages</p>
+                    <ul style="color: #edf6ef;">
+                      <li>C</li>
+                      <li>JAVA</li>
+                      <li>PYTHON</li>
+                      <li>SQL</li>
+                      <li>POWER BI</li>
+                
+                    </ul>                   
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card rounded-4 bg-base shadow-effect gy-4">
+                
+                  <div class="card-content p-3">
+                    <p class="text-brand mb-2">Softwares</p>
+                    <ul style="color: #edf6ef;">
+                      <li>Microsoft Office</li>
+                      <li>MatLab</li>
+                      <li>SAP HANA Cockpit</li>
+                    </ul>  
+                  
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="card rounded-4 bg-base shadow-effect gy-4">
+                
+                  <div class="card-content p-3">
+                    <p class="text-brand mb-2">Operating Systems</p>
+                    <ul style="color: #edf6ef;">
+                      <li>Windows</li>
+                      <li>Mac OS</li>
+                      <li>Linux</li>
+                      <li>Ubuntu</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //SKILLS -->
+
+
+      <!-- DETAILS -->
+      <section id="reviews" class="full-hight px-lg-5">
+        <div class="container gy-4">
+          <div class="row p-4">
+            <div class="col-md-8" data-aos="fade-up">
+              <h6>DETAILS</h6>
+              <h1 style="font-size: 1.5rem;">Place where you can find more about me</h1>
+            </div>
+
+            <div class="row gy-3 h6">
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="p-4 shadow-effect bg-base py-4 rounded-4">
+                  <div class="stars rounded-4 mb-3">
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                  </div>
+                  <div class="person">
+                    <h3>Lakshmi Narayana Kanamarlapudi</h3>
+                    <p></p>
+                  </div>
+                  <Address>Address : 306 Klotter Ave, Cincinnati, ohio</Address>
+                  <Address>Mobile  : +1 (513)-537-7858</Address>
+                  <Address>Mail    : kanamala@mail.uc.edu</Address>
+                  <p>
+                    
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                <div class="p-4 shadow-effect bg-base py-4 rounded-4">
+                  <div class="stars rounded-4 mb-3">
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                  </div>
+                  <div class="person">
+                    <h3>LinkedIN</h3>
+                    <a href="https://www.linkedin.com/in/kanamarlapudi-lakshmi-narayana/" target="_blank" class="custom-link num">View LinkedIN</a>
+                    <p></p>
+                  </div>
+                  <p>
+                    
+                  </p>
+    
+                </div>
+              </div>
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="900">
+                <div class="p-4 shadow-effect bg-base py-4 rounded-4">
+                  <div class="stars rounded-4 mb-3">
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                    <i class="las la-star"></i>
+                  </div>
+                  <div class="person">
+                    <h3>GitHUB</h3>
+                    <a href="https://github.com/LakshmiNarayanaKanamarlapudi/" target="_blank" "custom-link num">View GitHUB</a>
+                    <p></p>
+                  </div>
+                  <p>
+                    
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //DETAILS -->
+
+      <!-- CONTACT -->
+      <section id="contact" class="full-hight px-lg-5">
+        <div class="container gy-4">
+          <div class="row justify-content-center text-center p-4">
+            <div class="col-md-8 pb-4" data-aos="fade-up">
+              <h6>CONTACT</h6>
+              <h1>Interested in working together? Let's talk</h1>
+            </div>
+            <div class="col-md-8">
+              <form
+                action=""
+                class="row g-lg-3 gy-2"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="form-group col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your name "
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email "
+                  />
+                </div>
+                <div class="col-md-12 form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your subject "
+                  />
+                </div>
+                <div class="col-md-12 form-group">
+                  <textarea
+                    rows="5"
+                    class="form-control"
+                    placeholder="Enter your message "
+                  ></textarea>
+                </div>
+
+                <div class="col-md-12 form-group d-grid">
+                  <button class="btn btn-brand">Contact me</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //CONTACT -->
+    <!--//CONTENT WRAPPER -->
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
